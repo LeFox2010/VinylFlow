@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { SpotifyAuthProvider } from "@/components/spotify-auth-provider";
 
 export const metadata: Metadata = {
   title: "VinylFlow — Your music, in rotation",
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body><SpotifyAuthProvider>{children}</SpotifyAuthProvider></body>
     </html>
   );
 }
